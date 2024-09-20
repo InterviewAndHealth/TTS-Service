@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TTS</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+      h2 {
+        color: #333;
+        text-align: center;
+      }
+      #container {
+        width: 80%;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      audio {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Text to Speech</h2>
+      <textarea
+        id="text"
+        rows="4"
+        cols="50"
+        placeholder="Enter text here..."
+      ></textarea>
+      <button id="speakButton">Speak</button>
+      <audio id="audio" controls></audio>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
