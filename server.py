@@ -21,6 +21,11 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+async def root():
+    return {"message": "Welcome to the TTS Service"}
+
+
 @app.get("/tts")
 async def tts(request: Request, text: str = Query(...)):
     """Handle text-to-speech requests."""
@@ -30,5 +35,9 @@ async def tts(request: Request, text: str = Query(...)):
 
 if __name__ == "__main__":
     import uvicorn
+    import os
 
-    uvicorn.run(app, host="localhost", port=8000)
+    HOST = os.getenv("HOST", "localhost")
+    PORT = os.getenv("PORT", 8000)
+
+    uvicorn.run(app, host=HOST, port=PORT)
